@@ -1,4 +1,4 @@
-# Autotest for Only.Digital Footer
+# Autotest for Only.Digital Footer And Same Elements
 ![Tests](https://github.com/impart13/only-digital-footer-autotest/actions/workflows/test.yml/badge.svg)
 ## Описание
 Автотест для проверки наличия футера и его элементов на страницах сайта https://only.digital/
