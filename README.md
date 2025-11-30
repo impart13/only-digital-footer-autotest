@@ -13,3 +13,5 @@
 1. Установите зависимости:
 ```bash
 pip install -r requirements.txt
+
+![Tests](https://github.com/ваш-username/only-digital-footer-autotest/actions/workflows/test.yml/badge.svg)
