@@ -5,6 +5,7 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service as ChromeService
 import time
@@ -22,10 +23,17 @@ class TestFooterMultiplePages:
     
     @pytest.fixture(scope="class")
     def driver(self):
+        # Настройка ChromeOptions для headless режима
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")  # Запуск без графического интерфейса
+        chrome_options.add_argument("--no-sandbox")  # Важно для Linux
+        chrome_options.add_argument("--disable-dev-shm-usage")  # Решает проблемы с памятью
+        chrome_options.add_argument("--disable-gpu")  # Отключает GPU
+        chrome_options.add_argument("--window-size=1920,1080")  # Фиксированный размер окна
+        
         # Автоматическая установка и настройка ChromeDriver
         service = ChromeService(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service)
-        driver.maximize_window()
+        driver = webdriver.Chrome(service=service, options=chrome_options)
         yield driver
         driver.quit()
     
