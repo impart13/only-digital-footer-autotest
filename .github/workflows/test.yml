@@ -24,4 +24,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run tests
       run: |
-        pytest TEST_FOOTER.py -v
+        pytest TEST_FOOTER_GitAct.py -v
