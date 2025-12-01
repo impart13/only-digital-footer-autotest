@@ -25,11 +25,11 @@ class TestFooterMultiplePages:
     def driver(self):
         # Настройка ChromeOptions для headless режима
         chrome_options = Options()
-        chrome_options.add_argument("--headless")  # Запуск без графического интерфейса
-        chrome_options.add_argument("--no-sandbox")  # Важно для Linux
-        chrome_options.add_argument("--disable-dev-shm-usage")  # Решает проблемы с памятью
-        chrome_options.add_argument("--disable-gpu")  # Отключает GPU
-        chrome_options.add_argument("--window-size=1920,1080")  # Фиксированный размер окна
+        chrome_options.add_argument("--headless") 
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--window-size=1920,1080")
         
         # Автоматическая установка и настройка ChromeDriver
         service = ChromeService(ChromeDriverManager().install())
